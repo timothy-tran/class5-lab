@@ -10,8 +10,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sum(a,b){ //eslint-disable-line
   var c = a + b;
-  var sumArray = [c, 'The sum of ' + a + ' and ' + b + ' is ' + c + '.'];
-  return sumArray;
+  return [c, 'The sum of ' + a + ' and ' + b + ' is ' + c + '.'];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -30,8 +29,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a,b){ //eslint-disable-line
   var c = a * b;
-  var multiplyArray = [c, 'The product of ' + a + ' and ' + b + ' is ' + c + '.'];
-  return multiplyArray;
+  return [c, 'The product of ' + a + ' and ' + b + ' is ' + c + '.'];
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -52,11 +50,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
+  var x = sum(a,b);
+  var y = sum(x[0],c);
+  var z = multiply(a,b);
+  var w = multiply(z[0],c);
+  return [y[0], w[0], a + ' and ' + b + ' and ' + c + ' sum to ' + y[0] + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + w[0] + '.'];
 
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
